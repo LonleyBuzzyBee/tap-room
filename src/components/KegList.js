@@ -10,19 +10,21 @@ function KegList(props){
   let masterKegList = props.masterKegList;
   return (
     <React.Fragment>
-      {masterKegList.map((keg, index) =>
+      {masterKegList.map((keg) =>
          <Keg name={keg.name}
           brand={keg.brand}
           description={keg.description}
           alcoholContent={keg.alcoholContent}
-          key={index}
+          id={keg.id}
+          key={keg.id}
           />
       )}
   </React.Fragment>
   );
 }
  KegList.propTypes = {
-  kegList: PropTypes.array
+   kegList: PropTypes.array,
+   onKegSelection: PropTypes.func
 };
 
 export default KegList;
