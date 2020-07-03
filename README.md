@@ -7,7 +7,7 @@
 
 ## Components Diagram
 
-[![Landing Page Preview](https://www.draw.io/#G1cNDWnLQiXJJUlgVF8XaZI_5POjCm5zcT)]
+[![Landing Page Preview](Diagram_Tap_Room.png)]
 
 
 
