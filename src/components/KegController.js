@@ -41,7 +41,7 @@ class KegController extends React.Component {
     if (this.state.selectedKeg != null) {
       return (
         <React.Fragment>
-          <KegDetail Keg={this.state.selectedKeg} />
+          <KegDetail keg={this.state.selectedKeg} />
           <button onClick={this.ToggleForm}>Return to Keg List</button>
         </React.Fragment>
       )
