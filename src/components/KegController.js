@@ -18,6 +18,20 @@ class KegController extends React.Component {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({ selectedKeg: selectedKeg });
   }
+  buyPintFromKeg = (pint) => {
+    const selectedKeg = this.state.masterKegList.filter(keg => keg.pint === pint -1);
+    this.setState({ selectedKeg: selectedKeg });
+  }
+  //  handleEditingEventInList = (editedEvent) => {
+  //   const editedMasterEventList = this.state.masterEventList
+  //         .filter(event => event.id !== this.state.selectedEvent.id)
+  //         .concat(editedEvent);
+  //   this.setState({
+  //     masterEventList: editedMasterEventList,
+  //     editing: false,
+  //     selectedEvent: null
+  //   });
+  // }
 
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
@@ -57,7 +71,6 @@ class KegController extends React.Component {
     else {
       return (
         <React.Fragment>
-          {/* <KegList masterKegList={this.state.masterKegList} /> */}
           <KegList masterKegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
           <button onClick={this.ToggleForm}>New Keg</button>
         </React.Fragment>
