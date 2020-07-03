@@ -17,7 +17,6 @@ function Keg(props){
   );
 }
 
-//<button onClick={this.ToggleForm}>Back to List</button>
 
 Keg.propTypes = {
   name: PropTypes.string,
