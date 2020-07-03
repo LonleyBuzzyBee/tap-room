@@ -7,11 +7,14 @@ import PropTypes from "prop-types";
 
 //name, brand, price and alcoholContent
 function KegList(props){
-  let masterKegList = props.masterKegList;
+
   return (
     <React.Fragment>
-      {masterKegList.map((keg) =>
-         <Keg name={keg.name}
+      <hr/>
+      {props.masterKegList.map((keg) =>
+        <Keg
+          whenKegClicked = {props.onKegSelection}
+          name={keg.name}
           brand={keg.brand}
           description={keg.description}
           alcoholContent={keg.alcoholContent}

@@ -14,18 +14,18 @@ class KegController extends React.Component {
       selectedKeg: null
     };
   }
-
-  handleAddingNewKegToList = (newKeg) => {
-    const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.setState({ masterKegList: newMasterKegList, formVisibleOnPage: false });
-  }
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({ selectedKeg: selectedKeg });
   }
 
+  handleAddingNewKegToList = (newKeg) => {
+    const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    this.setState({ masterKegList: newMasterKegList, formVisibleOnPage: false });
+  }
+
   ToggleForm = () => {
-    if (this.state.selectedKeg != null) {
+     if (this.state.selectedKeg != null) {
       this.setState({
         formVisibleOnPage: false,
         selectedKeg: null
@@ -57,7 +57,7 @@ class KegController extends React.Component {
     else {
       return (
         <React.Fragment>
-          <KegList masterKegList={this.state.masterKegList} />
+          {/* <KegList masterKegList={this.state.masterKegList} /> */}
           <KegList masterKegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
           <button onClick={this.ToggleForm}>New Keg</button>
         </React.Fragment>

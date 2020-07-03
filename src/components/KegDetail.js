@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 
 function KegDetail(props) {
   const { keg } = props;
+  console.log(keg);
   return (
     <React.Fragment>
       <h1>Keg Details:</h1>
-       <h3>{keg.names}</h3>
-      <p><em>{keg.brand}</em></p>
-      <p><em>{keg.alcoholContent}</em></p>
-      <p><em>{keg.description}</em></p>
+       <h3>{keg.name}</h3>
+      <p>{keg.brand}</p>
+      <p>{keg.alcoholContent}</p>
+      <p>{keg.description}</p>
       <hr/>
     </React.Fragment>
   );
