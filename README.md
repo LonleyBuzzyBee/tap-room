@@ -7,7 +7,7 @@
 
 ## Components Diagram
 
-[![Landing Page Preview](Diagram_Tap_Room.png)]
+[![Landing Page Preview](img/Diagram_Tap_Room.png)]
 
 
 
