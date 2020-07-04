@@ -18,10 +18,7 @@ class KegController extends React.Component {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({ selectedKeg: selectedKeg });
   }
-  // buyPintFromKeg = (pint) => {
-  //   const selectedKeg = this.state.masterKegList.filter(keg => keg.pint === pint -1);
-  //   this.setState({ selectedKeg: selectedKeg });
-  // }
+
    handlebuyPintFromKeg = (id,pint) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id && keg.pint === pint-1)[0];
      this.setState({ selectedKeg: selectedKeg });

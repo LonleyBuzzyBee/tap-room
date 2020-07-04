@@ -3,8 +3,6 @@ import Keg from './Keg';
 import PropTypes from "prop-types";
 
 
-
-
 //name, brand, price and alcoholContent
 function KegList(props){
 
@@ -18,6 +16,7 @@ function KegList(props){
           brand={keg.brand}
           description={keg.description}
           alcoholContent={keg.alcoholContent}
+          pint={keg.pint}
           id={keg.id}
           key={keg.id}
           />
