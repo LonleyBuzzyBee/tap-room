@@ -16,7 +16,6 @@ function KegList(props){
           brand={keg.brand}
           description={keg.description}
           alcoholContent={keg.alcoholContent}
-          pint={keg.pint}
           id={keg.id}
           key={keg.id}
           />
@@ -27,6 +26,7 @@ function KegList(props){
  KegList.propTypes = {
    kegList: PropTypes.array,
    onKegSelection: PropTypes.func
+
 };
 
 export default KegList;

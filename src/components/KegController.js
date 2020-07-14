@@ -11,6 +11,7 @@ class KegController extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterKegList: [],
+      pint : 124,
       selectedKeg: null
     };
   }
@@ -19,18 +20,9 @@ class KegController extends React.Component {
     this.setState({ selectedKeg: selectedKeg });
   }
 
-   handlebuyPintFromKeg = (id,pint) => {
-    const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id && keg.pint === pint-1)[0];
-     this.setState({ selectedKeg: selectedKeg });
-  }
-  buyPintFromKeg = (editedKeg) => {
-    const editedMasterKegList = this.state.masterKegList
-          .filter(keg => keg.id !== this.state.selectedKeg.id)
-          .concat(editedKeg);
-    this.setState({
-      masterKegList: editedMasterKegList,
-      selectedKeg: null
-    });
+  buyPintFromKeg() {
+    const pint = this.state.pint - 1;
+    this.setState({ pint: pint});
   }
 
   handleAddingNewKegToList = (newKeg) => {
@@ -55,8 +47,10 @@ class KegController extends React.Component {
     if (this.state.selectedKeg != null) {
       return (
         <React.Fragment>
-          <KegDetail keg={this.state.selectedKeg}  onClickingBuyPint={this.buyPintFromKeg}/>
+          <KegDetail keg={this.state.selectedKeg} />
           <button onClick={this.ToggleForm}>Return to Keg List</button>
+          <p>pints: {this.state.pint}</p>
+          <button onClick={this.buyPintFromKeg.bind(this)}>buy a pint</button>
         </React.Fragment>
       )
     }
