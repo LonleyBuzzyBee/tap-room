@@ -1,10 +1,51 @@
 body {
-  margin: 0;
+  background-image: url('./assets/img/mountain.jpg');
+   background-size: cover;
+   height: 100%; 
+   overflow: hidden; 
+   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.parent{
+  width: 100%;
+}
+.header{
+  background-color: rgba(165, 204, 238, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 75%;
+}
+.form{
+  padding-top:20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-content: center;
+}
+.formChild{
+  width: 75%;
+  height: 600px;
+  background-color: rgba(165, 204, 238, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  margin: 0 auto;
+  
+}
+form{
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
 code {

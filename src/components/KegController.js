@@ -2,6 +2,7 @@ import React from 'react';
 import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 import KegDetail from './KegDetail';
+import BuyPint from './BuyPint';
 
 
 
@@ -11,7 +12,7 @@ class KegController extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterKegList: [],
-      pint : 124,
+      buyPint : false,
       selectedKeg: null
     };
   }
@@ -20,10 +21,20 @@ class KegController extends React.Component {
     this.setState({ selectedKeg: selectedKeg });
   }
 
-  buyPintFromKeg() {
-    const pint = this.state.pint - 1;
-    this.setState({ pint: pint});
+  handleBuyingPint = () => {
+    this.setState({buyPint: true});
   }
+  handleKegPintBoughtInList = (kegToBuy) => {
+  const editedMasterKegList = this.state.masterKegList
+    .filter(keg => keg.id !== this.state.selectedKeg.id)
+    .concat(kegToBuy);
+    this.setState({
+      masterKegList: editedMasterKegList,
+      buyPint: false,
+      selectedKeg: null
+    });
+  }
+
 
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
@@ -44,13 +55,22 @@ class KegController extends React.Component {
   }
 
   render() {
-    if (this.state.selectedKeg != null) {
+    
+    if (this.state.buyPint) {
       return (
         <React.Fragment>
-          <KegDetail keg={this.state.selectedKeg} />
+          <BuyPint keg={this.state.selectedKeg}
+            onBuyPint={this.handleKegPintBoughtInList} />
+          <button onClick={this.ToggleForm}>Return to list</button>
+        </React.Fragment>
+      )
+    }
+    else if (this.state.selectedKeg != null) {
+      return (
+        <React.Fragment>
+          <KegDetail keg={this.state.selectedKeg}
+          buyPintFromKeg={this.handleBuyingPint}/>
           <button onClick={this.ToggleForm}>Return to Keg List</button>
-          <p>pints: {this.state.pint}</p>
-          <button onClick={this.buyPintFromKeg.bind(this)}>buy a pint</button>
         </React.Fragment>
       )
     }
