@@ -17,16 +17,19 @@ function BuyPint(props) {
 
   return (
     <div className="form">
-      <React.Fragment>
-        <form onSubmit={handleKegPintBoughtInList}>
-          <input
-            type='number'
-            name='pint'
-            max='124'
-            placeholder='Amount' />
-          <button type='submit'>Submit</button>
-        </form>
-      </React.Fragment>
+      <div className="formChild">
+        <React.Fragment>
+          <h3>Choose an amount to purchase</h3>
+          <form onSubmit={handleKegPintBoughtInList}>
+            <input
+              type='number'
+              name='pint'
+              max='124'
+              placeholder='Amount' />
+            <button type='submit'>Submit</button>
+          </form>
+        </React.Fragment>
+      </div>
     </div>
   ); 
 }

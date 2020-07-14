@@ -23,6 +23,30 @@ body {
   text-align: center;
   width: 75%;
 }
+.list{
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.list-child{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgba(165, 204, 238, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  width: 75%;
+  min-height: 600px;
+}
+.list-items{
+  background-color: rgba(246, 251, 255, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  width: 55%;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 15px;
+}
 .form{
   padding-top:20px;
   margin-top: 20px;
@@ -32,13 +56,13 @@ body {
   align-content: center;
 }
 .formChild{
+  text-align: center;
   width: 75%;
   height: 600px;
   background-color: rgba(165, 204, 238, 0.925);
   box-shadow: 5px 5px 10px  #134796cb;
   border-radius: 1%;
   margin: 0 auto;
-  
 }
 form{
   padding-top: 20px;
@@ -47,8 +71,30 @@ form{
   display: flex;
   flex-direction: column;
 }
-
+button{
+  margin: 0 auto;
+}
+.details{
+  padding-top: 20px;
+}
+.details-child{
+  margin: 0 auto;
+  background-color: rgba(165, 204, 238, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  padding-top: 40px;
+  width: 75%;
+  height: 600px;
+}
+.details-container{
+  background-color: rgba(246, 251, 255, 0.925);
+  box-shadow: 5px 5px 10px  #134796cb;
+  border-radius: 1%;
+  width: 25%;
+  margin: 0 auto;
+  padding: 15px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }

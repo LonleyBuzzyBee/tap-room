@@ -19,7 +19,8 @@ function NewKegForm(props){
   return (
     <div className="form">
       <React.Fragment>
-       <div className="formChild"> 
+        <div className="formChild">
+         <h3>Fill out the form below to create a new keg</h3> 
         <form onSubmit={handleNewKegFormSubmission}>
           <input
             type='text'
